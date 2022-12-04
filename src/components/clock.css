@@ -11,7 +11,6 @@ align-items: center;
 position: relative;
 width: 20rem;
 height: 20rem;
-transform: rotate(180deg);
 background-color: rgb(77, 101, 121);
 border-radius: 10rem;
 box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
@@ -22,9 +21,6 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
 .clock::after{
     content: "";
     z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 80%;
     height: 80%;
     position: relative;
@@ -38,10 +34,11 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
     position: absolute;
     width: 4px;
     height: 20%;
-    top:50%;
+    height: 30%;
+    top:20%;
+    transform-origin: bottom;
     border-radius: 2px;
-      z-index: 7;
-    transform-origin: top;
+    z-index: 7;
     background: rgb(103, 180, 211);
 }
 
@@ -49,8 +46,8 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
     position: absolute;
     width: 3px;
     height: 30%;
-    top:50%;
-    transform-origin: top;
+    top:20%;
+    transform-origin: bottom;
     z-index: 5;
       border-radius: 2px;
     background: rgb(100, 209, 37);
@@ -58,11 +55,11 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
 
 .second{
     position: absolute;
-    width: 2px;
+    width: 3px;
     height: 40%;
-    top:50%;
-    transform-origin: top;
-      border-radius: 2px;
+    top:10%;
+    transform-origin: bottom;
+    border-radius: 2px;
     z-index: 6;
     background: rgb(224, 31, 31);
 }
@@ -70,22 +67,22 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
 .clock span{
     position: absolute;
     padding: 0.5rem;
-    transform: rotate(180deg);
+ 
     color:aliceblue;
 }
 
-.six{
+.twelve{
      top: 0;
 }
 
-.twelve{
+.six{
     bottom: 0;
 }
 
-.nine{
+.three{
     right: 0;
 }
 
-.three{
+.nine{
     left: 0;
 }
