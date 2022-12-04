@@ -11,10 +11,10 @@ align-items: center;
 position: relative;
 width: 20rem;
 height: 20rem;
-background-color: #ccc;
+background-color: rgb(68, 67, 67);
 border-radius: 10rem;
 box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
-    2px 2px 5px rgba(94, 104, 121, 0.3);
+    2px 2px 5px rgba(94, 104, 121, 0.5);
 }
 
 
@@ -30,44 +30,45 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
     background: transparent;
     border-radius: 50%;
     box-shadow: inset -2px -2px 7px rgba(255, 255, 255, 0.7),
-    inset 2px 2px 5px rgba(94, 104, 121, 0.3);
+    inset 2px 2px 5px rgba(94, 104, 121, 0.5);
 }
 
 .hour{
     position: absolute;
     width: 2px;
-    height: 15%;
+    height: 20%;
     top:50%;
     transform-origin: top;
     transform: rotate(0deg);
-    background: rgb(10, 51, 165);
+    background: rgb(103, 180, 211);
 }
 
 .minute{
     position: absolute;
     width: 2px;
-    height: 20%;
+    height: 30%;
     top:50%;
     transform-origin: top;
     transform: rotate(10deg);
     z-index: 5;
-    background: rgb(45, 95, 16);
+    background: rgb(100, 209, 37);
 }
 
 .second{
     position: absolute;
     width: 1px;
-    height: 30%;
+    height: 40%;
     top:50%;
     transform-origin: top;
-    transform: rotate(15deg);
+    transform: rotate(0deg);
     z-index: 6;
-    background: rgb(134, 23, 23);
+    background: rgb(224, 31, 31);
 }
 
 .clock span{
     position: absolute;
     padding: 0.5rem;
+    color:aliceblue;
 }
 
 .twelve{
