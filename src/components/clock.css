@@ -74,21 +74,18 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
     color:aliceblue;
 }
 
-
- 
-.three{
-    left: 0;
-}
 .six{
      top: 0;
 }
 
-
+.twelve{
+    bottom: 0;
+}
 
 .nine{
     right: 0;
 }
 
-.twelve{
-    bottom: 0;
+.three{
+    left: 0;
 }
