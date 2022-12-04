@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.clock{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+width: 20rem;
+height: 20rem;
+background-color: #ccc;
+border-radius: 10rem;
+box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
+    2px 2px 5px rgba(94, 104, 121, 0.3);
+}
+
+
+.clock::after{
+    content: "";
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    position: relative;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 7px rgba(255, 255, 255, 0.7),
+    inset 2px 2px 5px rgba(94, 104, 121, 0.3);
+}
+
+.hour{
+    position: absolute;
+    width: 2px;
+    height: 15%;
+    top:50%;
+    transform-origin: top;
+    transform: rotate(0deg);
+    background: rgb(10, 51, 165);
+}
+
+.minute{
+    position: absolute;
+    width: 2px;
+    height: 20%;
+    top:50%;
+    transform-origin: top;
+    transform: rotate(10deg);
+    z-index: 5;
+    background: rgb(45, 95, 16);
+}
+
+.second{
+    position: absolute;
+    width: 1px;
+    height: 30%;
+    top:50%;
+    transform-origin: top;
+    transform: rotate(15deg);
+    z-index: 6;
+    background: rgb(134, 23, 23);
+}
+
+.clock span{
+    position: absolute;
+    padding: 0.5rem;
+}
+
+.twelve{
+     top: 0;
+}
+
+.six{
+    bottom: 0;
+}
+
+.three{
+    right: 0;
+}
+
+.nine{
+    left: 0;
+}
