@@ -11,9 +11,9 @@ const Clock = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const hour = time.getHours() * 30;
   const minute = time.getMinutes() * 6;
   const second = time.getSeconds() * 6;
+  const hour = time.getHours() * 30;
 
   return (
     <>
@@ -30,9 +30,10 @@ const Clock = () => {
           className="second"
           style={{ transform: "rotate(" + second + "deg)" }}
         ></div>
+
         <span className="twelve">12</span>
-        <span className="six">6</span>
         <span className="three">3</span>
+        <span className="six">6</span>
         <span className="nine">9</span>
       </div>
     </>
