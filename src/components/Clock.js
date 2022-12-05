@@ -30,7 +30,7 @@ const Clock = () => {
           className="second"
           style={{ transform: "rotate(" + second + "deg)" }}
         ></div>
-
+        <span className="joint"></span>
         <span className="twelve">12</span>
         <span className="three">3</span>
         <span className="six">6</span>

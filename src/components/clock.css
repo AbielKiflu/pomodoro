@@ -34,8 +34,7 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
     position: absolute;
     width: 4px;
     height: 20%;
-    height: 30%;
-    top:20%;
+    top:30%;
     transform-origin: bottom;
     border-radius: 2px;
     z-index: 7;
@@ -71,10 +70,18 @@ box-shadow: -2px -2px 7px rgba(255, 255, 255, 0.7),
     color:aliceblue;
 }
 
+.joint{
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius:50%;
+    z-index: 10;
+    background: red;
+}
+
 .twelve{
      top: 0;
 }
-
+ 
 .six{
     bottom: 0;
 }
