@@ -1,10 +1,10 @@
 import "./App.css";
-import Clock from "./components/Clock";
+import FlipTimmer from "./components/timmer/FlipTimmer";
 
 function App() {
   return (
     <div className="App">
-      <Clock />
+      <FlipTimmer />
     </div>
   );
 }
