@@ -2,22 +2,36 @@ import styled from "styled-components";
 import { StyleSheet } from "react";
 
 const FlipTimmer = () => {
+  const minutes = 150;
+
+  const Calculator = (minutes) => {
+    let h = 0;
+    let m = 0;
+    let s = 0;
+    h = Math.floor(minutes / 60);
+    m = Math.floor(minutes % 60);
+    s = Math.floor(m % 60);
+
+    return { hr: h, min: m, sec: s };
+  };
+
+  let obj = Calculator(minutes);
+
   return (
     <Container>
-      <Inner>
-        <span>2</span>
-        <span>5</span>
-      </Inner>
-      <Inner>
-        <span>2</span>
-        <span>5</span>
-      </Inner>
-
-      <Inner>
-        <span>2</span>
-        <span>5</span>
-      </Inner>
+      <Timer val1={obj.hr} val2={"A"} />
+      <Timer val1={obj.min} val2={"A"} />
+      <Timer val1={obj.sec} val2={"A"} />
     </Container>
+  );
+};
+
+const Timer = ({ val1, val2 }) => {
+  return (
+    <Inner>
+      <span>{val1}</span>
+      <span>{val2}</span>
+    </Inner>
   );
 };
 
@@ -49,7 +63,7 @@ const Inner = styled.div`
     font-size: 3rem;
     color: gray;
     backface-visibility: hidden;
-    transition: transform 2s ease-in-out;
+    transition: transform 1s ease-in-out;
   }
 
   & span:hover {
