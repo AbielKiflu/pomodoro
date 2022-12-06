@@ -1,41 +1,67 @@
 import styled from "styled-components";
-import { StyleSheet } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const FlipTimmer = () => {
-  const minutes = 150;
+  //transform: rotateX(360deg);
+  const [time, setTime] = useState(952);
+  let obj = {};
 
-  const Calculator = (minutes) => {
-    let h = 0;
-    let m = 0;
-    let s = 0;
-    h = Math.floor(minutes / 60);
-    m = Math.floor(minutes % 60);
-    s = Math.floor(m % 60);
+  const interval = useEffect(() => {
+    setInterval(() => {
+      setTime((p) => p - 1);
+      //else
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-    return { hr: h, min: m, sec: s };
-  };
-
-  let obj = Calculator(minutes);
-
+  obj = Calculator(time);
   return (
     <Container>
-      <Timer val1={obj.hr} val2={"A"} />
-      <Timer val1={obj.min} val2={"A"} />
-      <Timer val1={obj.sec} val2={"A"} />
+      <Timer val1={obj?.hr} />
+      <Timer val1={obj?.min} />
+      <Timer val1={obj?.sec} />
     </Container>
   );
 };
 
-const Timer = ({ val1, val2 }) => {
+export default FlipTimmer;
+
+const Timer = ({ val1 }) => {
+  const ref = useRef(false);
+
+  const rotate = () => {
+    ref.current.style.transform = "rotateX(360deg)";
+  };
+
   return (
     <Inner>
-      <span>{val1}</span>
-      <span>{val2}</span>
+      <span ref={ref} onClick={rotate}>
+        {val1}
+      </span>
     </Inner>
   );
 };
 
-export default FlipTimmer;
+const Calculator = (seconds) => {
+  let h = 0;
+  let m = 0;
+  let s = 0;
+  let stop = false;
+  if (seconds - 60 * (h * 60 + m) >= 0 && !stop) {
+    let min = Math.floor(seconds / 60);
+    h = Math.floor(min / 60);
+    m = Math.floor(min % 60);
+    s = Math.floor(seconds - 60 * (h * 60 + m));
+  } else {
+    stop = true;
+  }
+
+  return {
+    hr: h.toString().length > 1 ? h : h.toString().padStart(2, "0"),
+    min: m.toString().length > 1 ? m : m.toString().padStart(2, "0"),
+    sec: s.toString().length > 1 ? s : s.toString().padStart(2, "0"),
+  };
+};
 
 const Container = styled.div`
   display: flex;
@@ -64,9 +90,5 @@ const Inner = styled.div`
     color: gray;
     backface-visibility: hidden;
     transition: transform 1s ease-in-out;
-  }
-
-  & span:hover {
-    transform: rotateX(180deg);
   }
 `;
