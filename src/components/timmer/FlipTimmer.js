@@ -87,7 +87,10 @@ const Inner = styled.div`
 
   & span {
     font-size: 3rem;
-    color: gray;
+    color: #333333;
+    font-weight: 500;
+    text-shadow: -0.2rem 0.2rem 0.2rem rgba(90, 90, 100, 0.7),
+      0.2rem -0.2rem 0.2rem rgba(255, 255, 255, 0.5);
     backface-visibility: hidden;
     transition: transform 1s ease-in-out;
   }
