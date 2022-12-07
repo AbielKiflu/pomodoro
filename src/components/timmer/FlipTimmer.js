@@ -46,10 +46,12 @@ const Calculator = (seconds) => {
   let m = 0;
   let s = 0;
 
-  let min = Math.floor(seconds / 60);
-  h = Math.floor(min / 60);
-  m = Math.floor(min % 60);
-  s = seconds - 60 * min;
+  if (seconds > 0) {
+    let min = Math.floor(seconds / 60);
+    h = Math.floor(min / 60);
+    m = Math.floor(min % 60);
+    s = seconds - 60 * m;
+  }
 
   return {
     hr: h,
